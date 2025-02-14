@@ -1,0 +1,547 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;  /* Smooth scroll for anchor links */
+}
+
+/* Body Styling */
+body {
+  background: linear-gradient(135deg, #ffffff, #4e4e4e); /* Gradient background */
+  font-family: 'Poppins', sans-serif;
+  color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Overlay for background */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Darker overlay for readability */
+  z-index: -1;
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 15px 5%;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.85); /* Slightly transparent white */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 70px;
+  border-bottom: 2px solid #001e1e;
+}
+
+.navbar p {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  letter-spacing: 1px;
+}
+
+/* Navbar links */
+.navbar ul {
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  list-style: none;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #444;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 12px;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+}
+
+.navbar a:hover {
+  color: #001e1e;
+  text-decoration: underline;
+  text-decoration-color: #001e1e;
+  transform: translateY(-2px);
+}
+
+.navbar a:active {
+  color: #444040;
+  transform: translateY(1px);
+}
+
+/* Card Styling */
+.card {
+  background-color: rgba(0, 0, 0, 0.6);  /* Transparent dark background */
+  border-radius: 15px;
+  padding: 30px;
+  width: 90%;
+  max-width: 900px;
+  margin: 10% auto;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+}
+
+.card img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 36px;
+  color: #fcfbfb;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+/* Professional Button Styling */
+.card button {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  padding: 12px 25px;
+  background: linear-gradient(145deg, #2c3e50, #34495e); /* Subtle gradient */
+  color: #fff;
+  border: 2px solid transparent; /* Border for the button */
+  border-radius: 50px; /* Rounded corners */
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Soft shadow */
+  outline: none; /* Remove default outline */
+  text-transform: uppercase; /* Uppercase text for a professional appearance */
+}
+
+.card button:hover {
+  background: linear-gradient(145deg, #34495e, #2c3e50); /* Reverse gradient on hover */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
+  transform: translateY(-3px); /* Slight lift effect */
+}
+
+.card button:active {
+  background: linear-gradient(145deg, #2c3e50, #34495e); /* Keeps the reversed gradient effect */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Smaller shadow on active */
+  transform: translateY(2px); /* Gives a push effect when clicked */
+}
+
+.card button:focus {
+  outline: 2px solid #001e1e; /* Custom focus ring with color */
+  outline-offset: 4px; /* Offset for better visibility */
+}
+
+/* Skill Bars Styling */
+.skill {
+  margin-bottom: 20px;
+  text-align: left;
+  font-size: 18px;
+}
+
+.skill label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #f4f4f4;
+}
+
+.skill-bar-container {
+  background-color: #333;
+  border-radius: 8px;
+  height: 20px;
+  margin-top: 5px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.skill-bar {
+  height: 100%;
+  transition: width 0.5s ease-out;
+  border-radius: 8px;
+}
+
+.skill-bar.java {
+  background-color: #FF8C00; /* Java color (orange) */
+}
+
+.skill-bar.python {
+  background-color: #306998; /* Python color (blue) */
+}
+
+.skill-bar.html {
+  background-color: #e34f26; /* HTML color (red) */
+}
+
+.skill-bar.css {
+  background-color: #264de4; /* CSS color (blue) */
+}
+
+.skill-bar.javascript {
+  background-color: #f0db4f; /* JavaScript color (yellow) */
+}
+
+.skill-bar.git {
+  background-color: #f1502f; /* Git color (red) */
+}
+
+.skill-bar.react {
+  background-color: #61dafb; /* React color (blue) */
+}
+
+.skill span {
+  display: inline-block;
+  margin-top: 5px;
+  color: #f4f4f4;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 10px 0;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .card {
+    width: 95%;
+    margin-top: 20%;
+    padding: 20px;
+  }
+
+  .card img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .card h1 {
+    font-size: 30px;
+  }
+
+  .card h3 {
+    font-size: 16px;
+  }
+}
+
+/* For small screens */
+@media (max-width: 480px) {
+  .navbar a {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+
+  .card h1 {
+    font-size: 24px;
+  }
+
+  .card h3 {
+    font-size: 14px;
+  }
+}
+/* Table Styling */
+.education-table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.education-table th,
+.education-table td {
+  padding: 12px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.education-table th {
+  background-color: #007BFF;
+  color: #fff;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.education-table td {
+  background-color: white;
+  color: black;
+  font-size: 16px;
+}
+
+.education-table tr:nth-child(even) {
+  background-color: #007BFF; }
+
+.education-table tr:hover {
+  background-color: #007BFF;
+  transform: translateY(-3px);
+  transition: all 0.3s ease;
+}
+
+.education-table td,
+.education-table th {
+  text-align: center;
+}
+
+/* Back Button Styling */
+.back-button-container {
+  text-align: center;
+  margin-top: 30px; /* Added more space between table and button */
+}
+
+.card button {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  padding: 12px 25px;
+  background: linear-gradient(145deg, #2c3e50, #34495e); /* Subtle gradient */
+  color: #fff;
+  border: 2px solid transparent;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  outline: none;
+  text-transform: uppercase;
+}
+
+.card button:hover {
+  background: linear-gradient(145deg, #34495e, #2c3e50);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+}
+
+.card button:active {
+  background: linear-gradient(145deg, #2c3e50, #34495e);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transform: translateY(2px);
+}
+
+.card button:focus {
+  outline: 2px solid #001e1e;
+  outline-offset: 4px;
+}
+/* Project Section Styling */
+.projects-list {
+  margin-top: 20px;
+}
+
+.project-item {
+  background-color: rgba(0, 0, 0, 0.6); /* Dark transparent background */
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.project-item h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.project-item p {
+  font-size: 16px;
+  color: #f4f4f4;
+  line-height: 1.6;
+}
+
+/* Hover Effect for Project Items */
+.project-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Back Button Styling */
+.back-button-container {
+  text-align: center;
+  margin-top: 40px; /* Added more space between projects and button */
+}
+
+.card button {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  padding: 12px 25px;
+  background: linear-gradient(145deg, #2c3e50, #34495e); /* Subtle gradient */
+  color: #fff;
+  border: 2px solid transparent;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  outline: none;
+  text-transform: uppercase;
+}
+
+.card button:hover {
+  background: linear-gradient(145deg, #34495e, #2c3e50);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+}
+
+.card button:active {
+  background: linear-gradient(145deg, #2c3e50, #34495e);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transform: translateY(2px);
+}
+
+.card button:focus {
+  outline: 2px solid #001e1e;
+  outline-offset: 4px;
+}
+
+
+.skill {
+  margin: 20px 0;
+  text-align: left;
+}
+
+.skill label {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.progress-bar {
+  width: 100%;
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  height: 20px;
+  margin-top: 5px;
+}
+
+.progress {
+  height: 100%;
+  border-radius: 8px;
+  transition: width 0.5s ease-out;
+}
+
+.skill span {
+  display: inline-block;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+/* Individual Skill Progress Bars */
+.progress.python {
+  background-color: #306998; /* Python color */
+}
+
+.progress.oop {
+  background-color: #008C9E; /* Object-Oriented Programming color */
+}
+
+.progress.dsa {
+  background-color: #0A74DA; /* DSA color */
+}
+
+.progress.canva {
+  background-color: #FF5858; /* Canva color */
+}
+
+.progress.ms-office {
+  background-color: #0078D4; /* MS Office color */
+}
+
+.progress.html {
+  background-color: #E34F26; /* HTML color */
+}
+
+.progress.css {
+  background-color: #264DE4; /* CSS color */
+}
+
+.progress.javascript {
+  background-color: #F0DB4F; /* JavaScript color */
+}
+
+.progress.gui {
+  background-color: #9B59B6; /* GUI Design color */
+}
+
+/* Back Button */
+button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #444;
+}
+
+.certification-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  text-align: left;
+}
+
+.certification-table th,
+.certification-table td {
+  padding: 12px 15px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.certification-table th {
+  background-color: #007BFF; /* Blue header */
+  color: #fff;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.certification-table td {
+  background-color: #f9f9f9;
+  color: #333;
+  font-size: 16px;
+}
+
+.certification-table tr:nth-child(even) {
+  background-color: #f4f4f4;
+}
+
+.certification-table tr:hover {
+  background-color: #007BFF;
+  color: white;
+  transform: translateY(-3px);
+  transition: all 0.3s ease;
+}
+.card h2{
+  color: black;
+}
